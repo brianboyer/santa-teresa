@@ -15,24 +15,6 @@
 
 
 {% block content %}
-<h1>{{ PROJECT_NAME }}</h1>
-<div id="story-meta">
-    <p class="byline">by <span>{{ COPY.attribution.byline }}</span></p>
-    <p class="dateblock">
-        <span class="date">{{ COPY.attribution.pubdate }}</span>
-        <span class="time"> {{ COPY.attribution.pubtime }}</span>
-    </p>
-</div>
-
-<h2>Example COPY list</h2>
-<dl>
-    {% for row in COPY.example_list %}
-    <dt>{{ row.term }}</dt><dd>{{ row.definition }}</dd>
-    {% endfor %}
-</dl>
-
-<h2>JST example</h2>
-<p id="template-example"></p>
 {% endblock %}
 
 
@@ -41,6 +23,33 @@
     <div class="col-md-12">
         <h2>{{ COPY.content.footer_title }}</h2>
         <p>{{ COPY.content.lorem_ipsum }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        MAP 1
+    </div>
+    <div class="col-md-3">
+        MAP 2
+    </div>
+    <div class="col-md-3">
+        MAP 3
+    </div>
+    <div class="col-md-3">
+        MAP 4
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="story-meta">
+            <p class="byline">by <span>{{ COPY.attribution.byline }}</span></p>
+            <p class="dateblock">
+                <span class="date">{{ COPY.attribution.pubdate }}</span>
+                <span class="time"> {{ COPY.attribution.pubtime }}</span>
+            </p>
+        </div>
     </div>
 </div>
 {% endblock %}
