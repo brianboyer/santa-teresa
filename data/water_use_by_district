@@ -3,3 +3,4 @@ in2csv input/pozos_aprobados\(13_3-14\)\ Segnini.xlsx > input/pozos.csv
 python aggregate_pozos_by_district_and_canton.py
 in2csv input/codigoPostal\ \(1\).xlsx | csvcut -c 4,5,6,7 > input/classificacion_por_distrito.csv
 python merge_pozos_with_population.py
+csvcut output/merged.csv -c 1,2,7,8,9,10,11 | csvjson > output/water_use_by_district.json
