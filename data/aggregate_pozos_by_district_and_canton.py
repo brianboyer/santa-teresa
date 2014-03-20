@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import csv
 from decimal import *
 
@@ -18,6 +19,22 @@ with open('input/pozos.csv', 'rb') as pozosfile:
                 continue
             else:
                 caudal = Decimal(row['caudal'])
+                caudal_humano = 0
+                caudal_agroganaderia = 0
+                caudal_industrial = 0
+                caudal_turismo = 0
+                caudal_otros = 0
+                
+                if uso == 'Consumo humano':
+                    caudal_humano = caudal
+                elif uso == 'Agroganadería':
+                    caudal_agroganaderia = caudal
+                elif uso == 'Industrial y comercial':
+                    caudal_industrial = caudal
+                elif uso == 'Turismo':
+                    caudal_turismo = caudal
+                elif uso == 'Otros':
+                    caudal_otros = caudal
                 
             provincia = row['provincia']
             canton = row['canton']
@@ -29,11 +46,16 @@ with open('input/pozos.csv', 'rb') as pozosfile:
 
             if distrito in distritos:
                 distritos[distrito]['caudal'] = distritos[distrito]['caudal'] + caudal
+                distritos[distrito]['caudal humano'] = distritos[distrito]['caudal humano'] + caudal_humano
+                distritos[distrito]['caudal agroganaderia'] = distritos[distrito]['caudal agroganaderia'] + caudal_agroganaderia
+                distritos[distrito]['caudal industrial'] = distritos[distrito]['caudal industrial'] + caudal_industrial
+                distritos[distrito]['caudal turismo'] = distritos[distrito]['caudal turismo'] + caudal_turismo
+                distritos[distrito]['caudal otros'] = distritos[distrito]['caudal otros'] + caudal_otros
                 distritos[distrito]['pozos'] = distritos[distrito]['pozos'] + 1
             else:
-                distritos[distrito] = {'caudal':caudal,'provincia':provincia,'canton':canton,'codigo':distrito,'pozos':1}
+                distritos[distrito] = {'caudal':caudal,'caudal humano':caudal_humano,'caudal agroganaderia':caudal_agroganaderia,'caudal industrial':caudal_industrial,'caudal turismo':caudal_turismo,'caudal otros':caudal_otros,'provincia':provincia,'canton':canton,'codigo':distrito,'pozos':1}
                 
     with open('output/distritos.csv','wb') as distritosfile:
-        distritoswriter = csv.DictWriter(distritosfile, ['codigo','provincia','canton','caudal','pozos'])
+        distritoswriter = csv.DictWriter(distritosfile, ['codigo','provincia','canton','caudal','caudal humano','caudal agroganaderia','caudal industrial','caudal turismo','caudal otros','pozos'])
         distritoswriter.writeheader()
         distritoswriter.writerows(distritos.values())

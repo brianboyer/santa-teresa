@@ -23,6 +23,11 @@ with open('output/distritos.csv', 'rb') as distritosfile:
         district['provincia'] = row['provincia']
         district['canton'] = row['canton']
         district['caudal'] = row['caudal']
+        district['caudal humano'] = row['caudal humano']
+        district['caudal agroganaderia'] = row['caudal agroganaderia']
+        district['caudal industrial'] = row['caudal industrial']
+        district['caudal turismo'] = row['caudal turismo']
+        district['caudal otros'] = row['caudal otros']
         district['pozos'] = row['pozos']
     
         poblacion_por_distrito[codigo] = district
@@ -39,6 +44,6 @@ with open('input/classificacion_por_distrito.csv') as classificacionfile:
         district['consumo diario en litros'] = row['Consumo diario en litros']
     
 with open('output/merged.csv','wb') as mergedfile:
-    mergedwriter = csv.DictWriter(mergedfile, ['codigo','nombre','poblacion','provincia','canton','caudal','pozos','region de consumo','consumo promedio mensual en metros cubicos','consumo diario en litros'])
+    mergedwriter = csv.DictWriter(mergedfile, ['codigo','nombre','poblacion','provincia','canton','caudal','caudal humano','caudal agroganaderia','caudal industrial','caudal turismo','caudal otros','pozos','region de consumo','consumo promedio mensual en metros cubicos','consumo diario en litros'])
     mergedwriter.writeheader()
     mergedwriter.writerows(poblacion_por_distrito.values())
