@@ -14,4 +14,14 @@ $(function() {
     var html = JST.example(context);
 
     $('#template-example').html(html);
+    
+    $('#read-in-english').click(function(){
+        $('.english').show();
+        $('.spanish').hide();
+    });
+    
+    $('#read-in-spanish').click(function(){
+        $('.spanish').show();
+        $('.english').hide();
+    });
 });
