@@ -1,6 +1,10 @@
 #!/bin/sh
 in2csv input/pozos_aprobados\(13_3-14\)\ Segnini.xlsx > input/pozos.csv
+# aggregation
 python aggregate_pozos_by_district_and_canton.py
 in2csv input/codigoPostal\ \(1\).xlsx | csvcut -c 4,5,6,7 > input/classificacion_por_distrito.csv
 python merge_pozos_with_population.py
-csvcut output/merged.csv -c 1,2,7,8,9,10,11 | csvjson > output/water_use_by_district.json
+# json for water use maps
+csvcut output/merged.csv -c 4,1,2,7,8,9,10,11 | grep "^5\|^provincia" | csvjson > output/water_use_by_district.json
+# json for well maps
+csvcut input/Pozos20140313SenaraCRTMW05GS84.csv -e "latin-1" -c 19,1,2,3,9,10,12,20,21,22,23,27,28 | grep "^5\|^provincia" | csvjson > output/pozos.json

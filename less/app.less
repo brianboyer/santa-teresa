@@ -65,6 +65,14 @@ a.btn.btn-blue {
 	}
 }
 
+img {
+    max-width:100%;
+}
+small.caption {
+    margin:11px 0 33px;
+    display: block;
+    line-height: 1.2em;
+}
 
 // Navbar
 nav {
@@ -133,19 +141,25 @@ nav {
 
 // Header
 header {
-	background-color: #ddd;
-	padding: 50px 30px 30px 30px;
+	background: #000 url('../assets/img/IMG_6670.jpg') no-repeat 0 0;
+	padding: 98px 30px 50px 30px;
 	border-bottom: 2px solid #fff;
+    
+    .introduction {
+        background: rgba(1,1,1,0.2);
+        padding: 33px;
+    }
 	
 	h1 { 
-	    font-size: 60px; 
+	    font-size: 48px; 
 	    font-family: Arial, Helvetica, sans-serif; 
-	    color: #555; 
+        font-weight: bold;
+	    color: white; 
 	    margin-bottom: 11px;
 	}
 	h2 { 
 	    font-size: 15px; 
-	    color: #666; 
+	    color: white; 
 	    margin: 0;
 	}
 }
@@ -181,7 +195,7 @@ header {
 	p {
 		font-size: 12px; 
 		margin: 0; 
-		color: #666;
+		color: white;
 		
 		&.byline span { text-transform: uppercase; }
 		&.dateblock .date { margin-right: 0.8em; }	}
