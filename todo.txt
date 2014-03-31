@@ -1,0 +1,7 @@
+photo credit for header
+photo credit for well
+double-check the districts in the map -- some were hand-assigned, and may be incorrect
+
+
+update header min-height at smaller breakpoints
+re-do the use types w/ the new mapping from giannina

@@ -1,5 +1,12 @@
 {% extends '_base.html' %}
 
+{% block extra_head %}
+<!-- <link rel="stylesheet" type="text/css" href="http://3vot.com/chicas_poderosas/water/assets/bootstrap.css" /> -->
+<link rel="stylesheet" type="text/css" href="http://3vot.com/chicas_poderosas/water/assets/style.css" />
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+<link rel="stylesheet" type="text/css" href=" http://3vot.com/chicas_poderosas/wells/assets/style.css" />
+{% endblock %}
+
 {% block header_content %}
 <header>
     <div class="container">
@@ -33,31 +40,10 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h3>{{ COPY.content.riker_subtitle }}</h3>
-        {{ COPY.content.riker_ipsum }}
-        <blockquote>
-            {{ COPY.content.riker_quote }}
-            <footer>
-                &mdash; <cite>Commander William Riker</cite>
-            </footer>
-        </blockquote>
-        {{ COPY.content.riker_ipsum_2 }}
-    </div>
-    <div class="col-md-2"></div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <img src="assets/img/AsadaNosara5_acrespoweb.jpg" />
-        <small class="caption">{{ COPY.content.well_photo_caption }}</small>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <h3>{{ COPY.content.riker_subtitle }}</h3>
-        {{ COPY.content.riker_ipsum_2 }}
+        <h3 class="english">{{ COPY.content.section_1_hed }}</h3>
+        <h3 class="spanish">{{ COPY.content.section_1_hed_spanish }}</h3>
+        <div class="english">{{ COPY.content.section_1 }}</div>
+        <div class="spanish">{{ COPY.content.section_1_spanish }}</div>        
     </div>
     <div class="col-md-2"></div>
 </div>
@@ -67,25 +53,104 @@
         <div id="water_use_app" />
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <small class="caption">
+            <span class="english">{{ COPY.content.use_map_caption }}</span>
+            <span class="spanish">{{ COPY.content.use_map_caption_spanish }}</span>
+        </small>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h3>{{ COPY.content.riker_subtitle }}</h3>
-        {{ COPY.content.riker_ipsum_2 }}
+        <h3 class="english">{{ COPY.content.section_2_hed }}</h3>
+        <h3 class="spanish">{{ COPY.content.section_2_hed_spanish }}</h3>
+        <div class="english">{{ COPY.content.section_2 }}</div>
+        <div class="spanish">{{ COPY.content.section_2_spanish }}</div>
     </div>
     <div class="col-md-2"></div>
 </div>
 
-<div class="row" id="well-map">
+<div class="row">
     <div class="col-md-12">
-        <h2>{{ COPY.content.well_map_title }}</h2>
-        <div id="wells_app" />
-        
+        <img src="assets/img/AsadaNosara5_acrespoweb.jpg" />
+        <small class="caption">
+            <span class="english">{{ COPY.content.well_photo_caption }}</span>
+            <span class="spanish">{{ COPY.content.well_photo_caption_spanish }}</span>
+        </small>
     </div>
 </div>
 
-<!-- <script src="http://3vot.com/chicas_poderosas/water/index.js"></script>
-<script src="http://3vot.com/chicas_poderosas/wells/index.js"></script> -->
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h3 class="english">{{ COPY.content.section_3_hed }}</h3>
+        <h3 class="spanish">{{ COPY.content.section_3_hed_spanish }}</h3>
+        <div class="english">{{ COPY.content.section_3 }}</div>
+        <div class="spanish">{{ COPY.content.section_3_spanish }}</div>        
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <blockquote class="english">
+            &ldquo;{{ COPY.content.quote }}&rdquo;
+            <footer>&mdash; {{ COPY.content.quote_attribution }}</footer>
+        </blockquote>
+        <blockquote class="spanish">
+            &ldquo;{{ COPY.content.quote_spanish }}&rdquo;
+            <footer>&mdash; {{ COPY.content.quote_attribution_spanish }}</footer>
+        </blockquote>        
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h3 class="english">{{ COPY.content.section_4_hed }}</h3>
+        <h3 class="spanish">{{ COPY.content.section_4_hed_spanish }}</h3>
+        <div class="english">{{ COPY.content.section_4 }}</div>
+        <div class="spanish">{{ COPY.content.section_4_spanish }}</div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <img src="assets/img/GCiampini_StreetPix_Samara-8279.jpg" />
+        <small class="caption">
+            <span class="english">{{ COPY.content.nap_photo_caption }}</span>
+            <span class="spanish">{{ COPY.content.nap_photo_caption_spanish }}</span>
+        </small>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h3 class="english">{{ COPY.content.section_5_hed }}</h3>
+        <h3 class="spanish">{{ COPY.content.section_5_hed_spanish }}</h3>
+        <div class="english">{{ COPY.content.section_5 }}</div>
+        <div class="spanish">{{ COPY.content.section_5_spanish }}</div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+<div class="row" id="well-map">
+    <div class="col-md-12">
+        <div id="wells_app" />
+    </div>
+</div>
+
+<script src="http://3vot.com/chicas_poderosas/water/index.js"></script>
+<script src="http://3vot.com/chicas_poderosas/wells/index.js"></script>
 
 {% endblock %}
