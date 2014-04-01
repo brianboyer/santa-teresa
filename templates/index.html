@@ -22,7 +22,6 @@
                     <p class="byline"><span class="english">by</span><span class="spanish">por</span> <span>{{ COPY.attribution.byline }}</span></p>
                     <p class="dateblock">
                         <span class="date">{{ COPY.attribution.pubdate }}</span>
-                        <span class="time"> {{ COPY.attribution.pubtime }}</span>
                     </p>
                 </div>
             </div>
@@ -152,5 +151,14 @@
 
 <script src="http://3vot.com/chicas_poderosas/water/index.js"></script>
 <script src="http://3vot.com/chicas_poderosas/wells/index.js"></script>
+
+<div class="row" id="footer_attribution">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="english"><em>{{ COPY.attribution.footer_attribution }}</em></div>
+        <div class="spanish"><em>{{ COPY.attribution.footer_attribution_spanish }}</em></div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
 
 {% endblock %}
