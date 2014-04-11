@@ -14,7 +14,7 @@ import os
 NAMES
 """
 # Project name used for display
-PROJECT_NAME = 'santa-teresa'
+PROJECT_NAME = u'Guanacaste produce 8,7 veces mas de agua para consumo humano de la que se necesita | La Voz de Guanacaste'
 
 # Project name in urls
 # Use dashes, not underscores!
